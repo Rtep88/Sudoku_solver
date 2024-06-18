@@ -134,6 +134,8 @@ function checkSudokuIntegrity(sudokuArray, sudokuValidOptions) {
 }
 
 function solveSudoku() {
+    var startTime = performance.now()
+
     //Disabling solve button
     document.getElementById('solveButton').disabled = true;
 
@@ -177,6 +179,10 @@ function solveSudoku() {
 
     //Enabling solve button
     document.getElementById('solveButton').disabled = false;
+
+    var endTime = performance.now()
+
+    document.getElementById('time').innerText = 'Solved in ' + (endTime - startTime) + 'ms';
 }
 
 function recursivelySolveSudoku(sudokuArray, sudokuValidOptions) {

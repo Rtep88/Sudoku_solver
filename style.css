@@ -26,6 +26,16 @@
     font-size: 20px;
 }
 
+#controlPanel{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#time{
+    margin: 10px;
+    font-size: 23px;
+}
+
 #solveButton {
     margin: 10px;
     font-size: 20px;

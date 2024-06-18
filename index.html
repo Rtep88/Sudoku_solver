@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <title></title>
+  <title>Sudoku solver</title>
 </head>
 
 <body>
@@ -13,9 +13,11 @@
   </header>
   <main>
     <div id="sudokuGrid"></div>
-    <button id="solveButton" onclick="solveSudoku()">Solve</button>
+    <div id="controlPanel">
+      <button id="solveButton" onclick="solveSudoku()">Solve</button>
+      <div id="time"></div>
+    </div>
   </main>
-  <footer></footer>
   <script src="sudoku.js"></script>
 </body>
 
