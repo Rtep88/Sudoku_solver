@@ -30,6 +30,7 @@ function generateMap() {
                     sudokuInput.autocomplete = 'false';
                     sudokuInput.maxLength = '1';
                     sudokuInput.setAttribute("oninput", "validateInput(this)");
+                    sudokuInput.inputMode="numeric";
                     sudokuSubGrid.append(sudokuInput);
                     sudokuElementArray[x1 * 3 + x2][y1 * 3 + y2] = sudokuInput;
                 }
@@ -134,7 +135,7 @@ function checkSudokuIntegrity(sudokuArray, sudokuValidOptions) {
 }
 
 function solveSudoku() {
-    var startTime = performance.now()
+    var startTime = performance.now();
 
     //Disabling solve button
     document.getElementById('solveButton').disabled = true;
@@ -180,9 +181,9 @@ function solveSudoku() {
     //Enabling solve button
     document.getElementById('solveButton').disabled = false;
 
-    var endTime = performance.now()
+    var endTime = performance.now();
 
-    document.getElementById('time').innerText = 'Solved in ' + (endTime - startTime) + 'ms';
+    document.getElementById('time').innerText = 'Solved in ' + (Math.round((endTime - startTime) * 100) / 100) + 'ms';
 }
 
 function recursivelySolveSudoku(sudokuArray, sudokuValidOptions) {
